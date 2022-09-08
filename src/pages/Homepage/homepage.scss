@@ -1,0 +1,10 @@
+.Homepage {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  //   max-height: 100vh;
+  &__body {
+    margin-top: -900px;
+    margin-left: 15%;
+  }
+}
