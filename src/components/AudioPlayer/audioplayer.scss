@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   z-index: 1005;
-  background-color: #020030;
+  background-color: #242730;;
 
   &__fixed {
     position: fixed;
@@ -27,11 +27,7 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 4vw;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.7) 10%,
-    rgba(0, 0, 0, 0)
-  );
+ 
   transition: all 0.2s ease-out;
 
   // overflow-x: scroll;

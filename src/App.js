@@ -20,7 +20,7 @@ import requests from './requests';
 import { setDefaultAudioListValuesAsync } from './redux/audioplaying/audioplaying.actions';
 import { fetchNarratorsAsync } from './redux/narrators/narrators.actions';
 import Navbar from "./components/Navbar/Navbar";
-// import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
+ import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
 // import { getLocalStorageCurrentUser } from './shared/localStorage'
 
 const App = () => {
@@ -74,15 +74,18 @@ const App = () => {
                     />
                     {/* <Route
                         exact
-                        path="/login"
-                        render={() => currentUser ? <Redirect to="/browse"/> : <Auth />}
-                    />
-                    <Route path="*">
-                        <Redirect to="/" />
+                        path="/"
+                        element={ currentUser ?  <Auth />: <Homepage />}
+                    /> */}
+                    {/* <Route path="*">
                     </Route> */}
                 </Routes>
          </AnimatePresence>
-            
+         {currentUser && (
+                <>
+                    <AudioPlayer />
+                </>
+            )}
         </div>
     )
 }
