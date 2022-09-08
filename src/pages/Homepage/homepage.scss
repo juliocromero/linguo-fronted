@@ -4,7 +4,10 @@
   min-height: 100vh;
   //   max-height: 100vh;
   &__body {
-    margin-top: -900px;
-    margin-left: 15%;
   }
+}
+.Homepage__body{
+  overflow-x: hidden;
+  padding: 100px 0px;
+
 }

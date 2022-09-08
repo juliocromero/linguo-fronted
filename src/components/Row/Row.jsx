@@ -78,14 +78,14 @@ const Row = ({
 		else if (i === 20) return 'right'
 
 		if (width >= 1378) {
-			if ([7, 13, 19].includes(i)) return 'left'
-			else if ([6, 12, 18].includes(i)) return 'right'
+			if ([7, 13, 19].includes(i)) return 'left swiper-slide__play-list'
+			else if ([6, 12, 18].includes(i)) return 'right swiper-slide__play-list'
 		} else if (width >= 998) {
-			if ([5, 9, 13, 17].includes(i)) return 'left'
-			else if ([4, 8, 12, 16].includes(i)) return 'right'
+			if ([5, 9, 13, 17].includes(i)) return 'left swiper-slide__play-list'
+			else if ([4, 8, 12, 16].includes(i)) return 'right swiper-slide__play-list'
 		} else if (width >= 768) {
-			if ([4, 7, 10, 13, 16].includes(i)) return 'left'
-			else if ([3, 6, 9, 12, 15, 18].includes(i)) return 'right'
+			if ([4, 7, 10, 13, 16].includes(i)) return 'left swiper-slide__play-list'
+			else if ([3, 6, 9, 12, 15, 18].includes(i)) return 'right swiper-slide__play-list'
 		}
 	}
 

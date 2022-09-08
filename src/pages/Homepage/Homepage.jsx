@@ -28,7 +28,7 @@ const Homepage = () => {
    //const rows = useRetrieveData('movies');
 
     // // taking out playlist from this list to avoid repeating
-    const rows = primaryrows && primaryrows.length > 0 && primaryrows.filter(r => r.genre !== 'toprated');
+    const rows = primaryrows && primaryrows.length > 0 && primaryrows.filter(r => r.genre !== 'toprated').filter(t => t.genre ===  "latestrecent");
 
     const preventUndefinedSelector = () => undefined;
 
@@ -37,6 +37,7 @@ const Homepage = () => {
 
     const continueListeningSelector = selectContinueListeningData ? selectContinueListeningData : preventUndefinedSelector;
     const rowDataContinueListening = useSelector(continueListeningSelector);
+    
 
     return (
        <>

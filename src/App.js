@@ -45,10 +45,10 @@ const App = () => {
     return (
         <div className="App">
              {currentUser && (
-                <>
-                <Navbar/>
-                <Siderbar />
-                </>
+                <div>
+                    <Navbar/>
+                    <Siderbar />
+                </div>
             )}
               <AnimatePresence exitBeforeEnter>
                 <Routes>

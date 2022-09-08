@@ -63,6 +63,8 @@
     padding: 0 4%;
   }
 
+  
+
   .swiper-wrapper {
     @include mq("md") {
       &:hover {
@@ -263,4 +265,12 @@
       }
     }
   }
+}
+.swiper-slide{
+
+  &__play-list{
+    border-radius: 100px;
+    
+  }
+
 }
