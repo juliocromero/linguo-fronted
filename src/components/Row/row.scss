@@ -3,8 +3,6 @@
 
 .Row {
   display: block;
-  padding: 1.5vh 0;
-  margin-bottom: 2.5em;
 
   @include mq("md") {
     padding: 3vh 0;
@@ -267,7 +265,7 @@
   }
 }
 .swiper-slide{
-
+  position: relative;
   &__play-list{
     border-radius: 100px;
     

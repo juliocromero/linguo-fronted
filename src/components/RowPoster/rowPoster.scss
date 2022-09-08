@@ -1,11 +1,24 @@
 @import "../../scss/mixin";
 @import "../../scss/variables";
 
+.Row__poster--big img{
+  width: 100%;
+  height: 100%;
+}
+
 .Row__poster {
   position: relative;
   overflow: hidden;
   margin-right: 0.5rem;
   cursor: pointer;
+
+  &--img{
+    border-radius: $border-card;
+    padding-right: 10px;
+    position: absolute;
+    &__play-list{
+    }
+  }
 
   &:last-of-type {
     img {
@@ -48,8 +61,8 @@
   }
 
   &--big {
+    height: 250px;
     img {
-      width: 100%;
       min-height: auto;
     }
   }
@@ -64,7 +77,6 @@
   &-info {
     position: absolute;
     left: 0;
-    bottom: 0;
     transform: translateY(20%);
     display: flex;
     flex-direction: column;
@@ -197,7 +209,6 @@
         font-size: 12px;
         font-weight: 600;
         text-transform: none;
-        background-color: $black;
         border-radius: 1em;
         padding: 0.3em;
 
@@ -274,10 +285,12 @@
 }
 
 .swiper-slide {
+  height: 0;
+
   .Row__poster {
     &::after {
       content: "";
-      position: absolute;
+      position: relative;
       top: 0;
       left: 0;
       width: 100%;
@@ -297,6 +310,10 @@
       opacity: 0;
       transition: opacity 0.2s ease-out;
     }
+
+    &--big{
+      width: 100%;
+    }
   }
   @include mq("md") {
     &:hover {
@@ -312,4 +329,40 @@
       }
     }
   }
+}
+
+.swiper-wrapper__play-list .swiper-slide{
+  position: relative;
+}
+.swiper-wrapper{
+  height: 0px;
+  &__play-list{
+    .swiper-slide{
+      height: 100%;
+    }
+    .Row__poster-info{
+      bottom: 70%;
+      height: 0px;
+
+    }
+    .Row__poster-info--title h3{
+      font-size:large;
+    }
+    .Row__poster-info--iconswrp{
+      display: none;
+    }
+
+    background-color: none;
+  }
+  &__secondary{
+    .Row__poster-info{
+      bottom: 0%;
+      
+    }
+    .Row__poster-info--title h3{
+      background-color: $black;
+    }
+  }
+  
+  
 }

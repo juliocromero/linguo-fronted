@@ -37,6 +37,13 @@ const Row = ({
 	//Custom Swiper config
 	const navigationPrevRef = useRef(null);
 	const navigationNextRef = useRef(null);
+	let breakpoints_playlist = {
+		1678: { slidesPerView: 4, slidesPerGroup: 4 },
+		1378: { slidesPerView: 3, slidesPerGroup: 3 },
+		998: { slidesPerView: 2, slidesPerGroup: 2 },
+		625: { slidesPerView: 1, slidesPerGroup: 1 },
+	}
+	
     const customSwiperParams = {
         observer: true,
         observeParents: true,
@@ -45,12 +52,12 @@ const Row = ({
 			nextEl: navigationNextRef.current,
 		},
 		breakpoints:{
-			1378: { slidesPerView: 6, slidesPerGroup: 6 },
-			998: { slidesPerView: 4, slidesPerGroup: 4 },
-			625: { slidesPerView: 3, slidesPerGroup: 3 },
-			330: { slidesPerView: 2, slidesPerGroup: 2 },
-			0: { slidesPerView: 1.5, slidesPerGroup: 1.5 }
+			1678: { slidesPerView: 5, slidesPerGroup: 5 },
+			1378: { slidesPerView: 4, slidesPerGroup: 4 },
+			998: { slidesPerView: 3, slidesPerGroup: 3 },
+			625: { slidesPerView: 2, slidesPerGroup: 2 },
 		},
+		
 		loopAdditionalSlides: width >= 1378 ? 5 : width >= 998 ? 3 : width >= 625 ? 2 : 2,
 		pagination: true,
 		loop: false,
@@ -70,13 +77,12 @@ const Row = ({
 	const rightMouseOut = (e) => {
 		e.currentTarget.parentElement.classList.remove('is-right', 'is-left')
 	}
-
+	console.log(results)
 	const insertPositionClassName = (index) => {
 		const i = index + 1
-
-		if (i === 1) return 'left'
+		if (i === 1) return 'left '
 		else if (i === 20) return 'right'
-
+		
 		if (width >= 1378) {
 			if ([7, 13, 19].includes(i)) return 'left swiper-slide__play-list'
 			else if ([6, 12, 18].includes(i)) return 'right swiper-slide__play-list'
@@ -117,10 +123,13 @@ const Row = ({
 					</div>
 					<Swiper
 						{...customSwiperParams}
+						breakpoints={genre == 'toprated' ? breakpoints_playlist : customSwiperParams.breakpoints}
+						
 						onBeforeInit={(swiper) => {
 							swiper.params.navigation.prevEl = navigationPrevRef.current;
 							swiper.params.navigation.nextEl = navigationNextRef.current;
 						}}
+						className={genre == 'toprated'? 'swiper-wrapper__play-list': 'swiper-wrapper__secondary'}
 					>
 						{!loading &&
 							results &&

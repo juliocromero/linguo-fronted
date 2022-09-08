@@ -278,16 +278,16 @@ const RowPoster = result => {
 					{isLarge ? (
 						poster_path ? (
 							isLinguoo ?
-							<img src={`${poster_path}`} alt={fallbackTitle} /> 
-							: <img src={`${BASE_IMG_URL}/${poster_path}`} alt={fallbackTitle} />
+							<img  src={`${poster_path}`} alt={fallbackTitle} /> 
+							: <img  src={`${BASE_IMG_URL}/${poster_path}`} alt={fallbackTitle} />
 							) : ""
 					) : backdrop_path ? (
 						isLinguoo ?
-						<img src={`${backdrop_path}`} alt={fallbackTitle} /> 
-						: <img src={`${BASE_IMG_URL}/${backdrop_path}`} alt={fallbackTitle} />
+						<img className="Row__poster--img" src={`${backdrop_path}`} alt={fallbackTitle} /> 
+						: <img className="Row__poster--img" src={`${BASE_IMG_URL}/${backdrop_path}`} alt={fallbackTitle} />
 					) : (
 						<>
-							<img src={FALLBACK_IMG_URL} alt={fallbackTitle} />
+							<img   src={FALLBACK_IMG_URL} alt={fallbackTitle} />
 							<div className="Row__poster__fallback">
 								<span>{fallbackTitle}</span>
 							</div>
@@ -298,12 +298,12 @@ const RowPoster = result => {
 			: ( isLarge ? (
 				poster_path ? (
 					isLinguoo ?
-					<img src={`${poster_path}`} alt={fallbackTitle} /> 
+					<img  src={`${poster_path}`} alt={fallbackTitle} /> 
 					: <img src={`${BASE_IMG_URL}/${poster_path}`} alt={fallbackTitle} />
 					) : ""
 			) : backdrop_path ? (
 				isLinguoo ?
-				<img src={`${backdrop_path}`} alt={fallbackTitle} /> 
+				<img className="Row__poster--img Row__poster--img__play-list" src={`${backdrop_path}`} alt={fallbackTitle} /> 
 				: <img src={`${BASE_IMG_URL}/${backdrop_path}`} alt={fallbackTitle} />
 			) : (
 				<>
